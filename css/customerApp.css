@@ -1,0 +1,12 @@
+.container{
+	margin-top: 2%;
+	width: 80%;
+}
+.customerInfo{
+	display: block;
+	border: solid black 1px; 
+}
+#adminPanel{
+	border:solid black 1px;
+
+}

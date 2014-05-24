@@ -1,0 +1,24 @@
+
+<div class="row">
+  <div class="col-xs-9 pull-left">
+    <h3>List of Customers</h3>
+    <div class="customerInfo" ng-repeat="customer in customers">
+      <ul>
+        <li>Name: {{customer.name}}</li>
+        <li>Email: {{customer.email}}</li>
+        <li>Phone Number: {{customer.telephone}}</li>
+        <li>Address:</li>
+        <ul>
+          <li>Street Address: {{customer.address.street}}</li>
+          <li>City: {{customer.address.city}}</li>
+          <li>State: {{customer.address.state}}</li>
+          <li>Zip Code: {{customer.address.zip}}</li>
+        </ul>
+      </ul>
+      <button class="btn btn-warning" ng-click="deleteCustomer(customer.email)">Delete</button>
+    </div>
+  </div>
+  <div id="adminPanel" class="col-xs-3 pull-right">
+    <button class="btn btn-default" ng-click="expression"></button>
+  </div>
+</div>

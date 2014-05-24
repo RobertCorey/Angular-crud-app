@@ -1,0 +1,12 @@
+{
+    "name": "Robert Corey",
+    "email": "robertbcorey@gmail.com",
+    "telephone": "401-533-1765",
+    "address":
+    {
+        "street": "123 Sesame",
+        "city": "New York",
+        "state": "RI",
+        "zip": "02221"
+    }
+}
