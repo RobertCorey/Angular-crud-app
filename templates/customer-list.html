@@ -1,8 +1,10 @@
-
+<!-- list all of the customers on the left side of the page -->
 <div class="row">
   <div class="col-xs-9 pull-left">
     <h3>List of Customers</h3>
-    <div class="customerInfo" ng-repeat="customer in customers">
+    <!-- print all of the customer information, allow filtering by the search box, and sorting by the
+    sort select dropdown -->
+    <div class="customerInfo" ng-repeat="customer in customers | filter:query | orderBy:sortBy">
       <ul>
         <li>Name: {{customer.name}}</li>
         <li>Email: {{customer.email}}</li>
@@ -15,10 +17,31 @@
           <li>Zip Code: {{customer.address.zip}}</li>
         </ul>
       </ul>
-      <button class="btn btn-warning" ng-click="deleteCustomer(customer.email)">Delete</button>
+      <div class="btn-group">
+        <!-- delete button -->
+        <button class="btn btn-danger" ng-click="deleteCustomer(customer.email)">Delete</button>
+        <!-- modification button -->
+        <a href="#/cust/{{customer.email}}">
+          <button class="btn btn-primary">Modify</button>
+        </a>
+      </div>
     </div>
   </div>
   <div id="adminPanel" class="col-xs-3 pull-right">
-    <button class="btn btn-default" ng-click="expression"></button>
+    <h3>Admin Panel</h3>
+    Search: <input ng-model="query">
+    Sort By First Name: 
+    <select ng-model="sortBy">
+      <option value="name">A-Z</option>
+      <option value="-name">Z-A</option>
+    </select>
+    <h4>Action Log:</h4>
+    <div id="adminMessage" class="well well-lg">
+      {{message}}
+    </div>
+    <!-- directs the add modify view in 'add' mode -->
+    <a href="#/cust/addCustomer">
+      <button id="newCustomerButton" class="btn btn-primary">Add New Customer</button>
+    </a>
   </div>
 </div>

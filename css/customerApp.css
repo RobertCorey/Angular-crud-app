@@ -1,12 +1,22 @@
+.title{
+	font-size: 2em;
+}
 .container{
 	margin-top: 2%;
 	width: 80%;
 }
 .customerInfo{
 	display: block;
-	border: solid black 1px; 
+	border: solid black 1px;
+	padding: 2%; 
 }
 #adminPanel{
 	border:solid black 1px;
-
+}
+#adminMessage{
+	min-height: 10em;
+	margin-top: 1em;
+}
+#newCustomerButton{
+	margin-bottom: 1em;
 }
